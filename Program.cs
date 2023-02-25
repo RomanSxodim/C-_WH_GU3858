@@ -1,103 +1,68 @@
-﻿
-/*
-
-// Задача: Написать программу, которая на вход принимает два числа и выдаёт,
-// какое число большее, а какое меньшее.
-
-Console.Write("Введите первое число " );
-int num1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите второе число " );
-int num2 = Convert.ToInt32(Console.ReadLine());
+﻿/*
+// Напишите программу, которая принимает на вход
+// пятизначное число и проверяет,  является ли оно палиндромом.
 
 
-if (num1 > num2)
+
+Console.WriteLine("Введите число: ");
+string num = Console.ReadLine();
+int len = num.Length;
+
+if (len == 5)
+
+    if (num[0] == num[4] && num[1] == num[3])
+    Console.WriteLine($"{num} - да");
+    else Console.WriteLine($"{num} - нет");
+    else
 {
-    Console.WriteLine("Число " + num1 + " больше, чем число " + num2);
+    Console.WriteLine("ВЫ ввели не пятизначное число");
 }
-else
-{
-    Console.WriteLine("Число " + num2 + " больше, чем число " + num1);
-}
-
 
 */
 
 /*
-
-// Задача : Написать программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
-
-Console.Write("Введите первое число " );
-int num1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите второе число " );
-int num2 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите третье число " );
-int num3 = Convert.ToInt32(Console.ReadLine());
+// Напишите программу, которая принимает на вход 
+// координаты двух точек и находит расстояние между ними в 3D пространстве.
 
 
-if (num1 > num2)
+int x1 = Cord("Введите координату X первой точки: ");
+int x2 = Cord("Введите координату X второй точки: ");
+int y1 = Cord("Введите координату Y первой точки: ");
+int y2 = Cord("Введите координату Y второй точки: ");
+int z1 = Cord("Введите координату Z первой точки: ");
+int z2 = Cord("Введите координату Z второй точки: ");
+
+int A = x2 - x1;
+int B = y2 - y1;
+int C = z1 - z2;
+
+double length = Math.Sqrt(A * A + B * B + C * C);
+Console.WriteLine($"Расстояние между точами {length}");
+
+int Cord(string message)
 {
-    if (num1 > num3)
-    {
-       Console.WriteLine("Число " + num1 + " максимальное из чисел: " + num1 + ", "+ num3 + " и " + num2); 
-    }
-    else 
-    {
-        Console.WriteLine("Число " + num3 + " максимальное из чисел: " + num3 + ", " + num2 + " и " + num1); 
-    }
-}
-else
-{
-    if (num2 > num3)
-    {
-        Console.WriteLine("Число " + num2 + " максимальное из чисел: " + num2 + ", " + num3 + " и " + num1); 
-    }
-    else 
-    {
-        Console.WriteLine("Число " + num3 + " максимальное из чисел: "  + num3 + ", " + num2 + " и " + num1); 
-    }
+    Console.Write(message);
+    return Convert.ToInt32(Console.ReadLine());
 }
 
 */
 
 
-/*
-
-//Задача: Написать программу, которая на вход принимает число и выдаёт,
-//  является ли число чётным (делится ли оно на два без остатка).
+// Напишите программу, которая принимает на вход число (N) 
+// и выдаёт таблицу кубов чисел от 1 до N.
 
 
-Console.Write("Введите число " );
-int num1 = Convert.ToInt32(Console.ReadLine());
-int num2 = num1 % 2;
-if (num2 == 0)
-    {
-       Console.WriteLine("Число " + num1 + " является четным"); 
-    }
-    else 
-    {
-        Console.WriteLine("Число " + num1 + " является не четным "); 
-    }
-
-*/
 
 
-// Задача 8: Написать программу, которая на вход принимает число (N), 
-// а на выходе показывает все чётные числа от 1 до N.
-
-Console.Write("Введите число " );
-int num1 = Convert.ToInt32(Console.ReadLine());
-int num2 = 2; 
-if (num1 == 1)
-    {
-      Console.WriteLine("Число " + num1 + " не имеет в своем составе четных чисел"); 
-    }
-    else 
-       
-while(num1 >= num2)
+int ReadInt(string message)
 {
-    Console.Write(num2 + " ");
-    num2 += 2;
+    Console.Write(message);
+    return Convert.ToInt32(Console.ReadLine());
 }
+int number = ReadInt("Введите число N: ");
+for (int i = 1; i <= number; i++)
+Console.Write($"{i*i*i} ");
+
 
 
 
