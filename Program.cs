@@ -1,70 +1,45 @@
-﻿/*
-// Напишите программу, которая принимает на вход
-// пятизначное число и проверяет,  является ли оно палиндромом.
-
-
-
-Console.WriteLine("Введите число: ");
-string num = Console.ReadLine();
-int len = num.Length;
-
-if (len == 5)
-
-    if (num[0] == num[4] && num[1] == num[3])
-    Console.WriteLine($"{num} - да");
-    else Console.WriteLine($"{num} - нет");
-    else
-{
-    Console.WriteLine("ВЫ ввели не пятизначное число");
-}
-
-*/
-
+﻿
 /*
-// Напишите программу, которая принимает на вход 
-// координаты двух точек и находит расстояние между ними в 3D пространстве.
+// Напишите цикл, который принимает на вход два 
+// числа (A и B) и возводит число A в натуральную степень B.
 
+Console.WriteLine("введите число A");
+int numA = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("введите число B");
+int numB = Convert.ToInt32(Console.ReadLine());
 
-int x1 = Cord("Введите координату X первой точки: ");
-int x2 = Cord("Введите координату X второй точки: ");
-int y1 = Cord("Введите координату Y первой точки: ");
-int y2 = Cord("Введите координату Y второй точки: ");
-int z1 = Cord("Введите координату Z первой точки: ");
-int z2 = Cord("Введите координату Z второй точки: ");
+Raise(numA, numB);
 
-int A = x2 - x1;
-int B = y2 - y1;
-int C = z1 - z2;
-
-double length = Math.Sqrt(A * A + B * B + C * C);
-Console.WriteLine($"Расстояние между точами {length}");
-
-int Cord(string message)
+void Raise(int a, int b)
 {
-    Console.Write(message);
-    return Convert.ToInt32(Console.ReadLine());
+    int result = 1;
+    for (int i = 1; i <= b; i++)
+    result = result * a;
+    Console.WriteLine("A в степени B равно: " + result);
 }
 
 */
 
+// Напишите программу, которая принимает на вход число
+//  и выдаёт сумму цифр в числе.
 
-// Напишите программу, которая принимает на вход число (N) 
-// и выдаёт таблицу кубов чисел от 1 до N.
-
-
-
-
-int ReadInt(string message)
+int Ent(string message)
 {
     Console.Write(message);
     return Convert.ToInt32(Console.ReadLine());
 }
-int number = ReadInt("Введите число N: ");
-for (int i = 1; i <= number; i++)
-Console.Write($"{i*i*i} ");
 
+int SumNumbers(int number)
+{
+    int sum = 0;
+    while (number > 0)
+    {
+    sum += number % 10;
+    number /= 10;
+    }
+    return sum;
+}
 
-
-
-
+int numb = Ent("Введите число: ");
+Console.WriteLine($"сумма всех цифр в числе равна:  {numb} = {SumNumbers (numb)}");
 
